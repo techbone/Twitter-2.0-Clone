@@ -1,9 +1,9 @@
+import { GetServerSideProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Feed from "../components/Feed";
 import SideBar from "../components/SideBar";
 import Widgets from "../components/Widgets";
-import styles from "../styles/Home.module.css";
+import { fetchTweets } from "../utilities/fetchTweets";
 
 export default function Home() {
   return (
@@ -24,3 +24,10 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const tweets = await fetchTweets();
+  return {
+    props: {},
+  };
+};
