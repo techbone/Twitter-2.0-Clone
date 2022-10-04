@@ -2,13 +2,20 @@ import React from "react";
 import { Tweet } from "../typings";
 import TimeAgo from "react-timeago";
 
+import {
+  ChatAlt2Icon,
+  HeartIcon,
+  SwitchHorizontalIcon,
+  UploadIcon,
+} from "@heroicons/react/outline";
+
 interface Props {
   tweet: Tweet;
 }
 
 const Tweet = ({ tweet }: Props) => {
   return (
-    <div>
+    <div className="flex flex-col space-x-3 border-y border-gray-100 p-5 ">
       <div className="flex space-x-3">
         <img
           className="h-10 w-10 rounded-full object-cover"
@@ -19,7 +26,7 @@ const Tweet = ({ tweet }: Props) => {
           <div className="flex items-center space-x-1">
             <p className="mr-1 font-bold">{tweet.username}</p>
             <p className="hidden text-sm text-gray-500 sm:inline">
-              @{tweet.username.replace(/\s+/g, "").toLocaleLowerCase()}
+              @{tweet.username.replace(/\s+/g, "").toLocaleLowerCase()} .
             </p>
             <TimeAgo
               className="text-sm text-gray-500"
@@ -35,6 +42,12 @@ const Tweet = ({ tweet }: Props) => {
             ></img>
           )}
         </div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );
