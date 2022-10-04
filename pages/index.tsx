@@ -3,9 +3,14 @@ import Head from "next/head";
 import Feed from "../components/Feed";
 import SideBar from "../components/SideBar";
 import Widgets from "../components/Widgets";
+import { Tweet } from "../typings";
 import { fetchTweets } from "../utilities/fetchTweets";
 
-export default function Home() {
+interface Props {
+  tweets: Tweet[];
+}
+
+export default function Home({ tweets }: Props) {
   return (
     <div className="mx-auto max-h-screen overflow-hidden lg:max-w-6xl">
       <Head>
@@ -16,7 +21,7 @@ export default function Home() {
         <SideBar />
 
         {/* Feed */}
-        <Feed />
+        <Feed tweets={tweets} />
 
         {/* wWidgets */}
         <Widgets />
@@ -28,6 +33,8 @@ export default function Home() {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const tweets = await fetchTweets();
   return {
-    props: {},
+    props: {
+      tweets,
+    },
   };
 };

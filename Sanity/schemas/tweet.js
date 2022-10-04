@@ -1,6 +1,6 @@
 export default {
   name: "tweet",
-  title: "Twitter",
+  title: "Tweet",
   type: "document",
   fields: [
     {
