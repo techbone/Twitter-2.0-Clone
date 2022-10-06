@@ -1,4 +1,4 @@
-import { sanityClient } from "../../Sanity";
+
 import { groq } from "next-sanity";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Comment } from "../../typings";
