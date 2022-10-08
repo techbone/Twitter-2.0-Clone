@@ -1,4 +1,3 @@
-
 import { groq } from "next-sanity";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Comment } from "../../typings";
@@ -11,11 +10,3 @@ const commentQuery = groq`
 `;
 
 type Data = Comment[];
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  const 
-  res.status(200).json({ tweets });
-}
