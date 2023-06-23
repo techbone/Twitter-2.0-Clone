@@ -22,8 +22,13 @@ const Tweet = ({ tweet }: Props) => {
   };
 
   useEffect(() => {
+    console.log("gsdvhs");
     refreshComments();
   }, []);
+
+  (async function () {
+    await fetchComments(tweet._id);
+  })();
 
   console.log(comments);
   return (
